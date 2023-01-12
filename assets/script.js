@@ -26,34 +26,35 @@ function generatePassword() {
 
   }
 
-  //Array of characaters to include in the password
-  const characaters = [];
+  //Array of chars to include in the password
+  const chars = [];
  
 // Add lowercase letters
 if (lowercase) {
   for (var i = 97; i <= 122; i++){
-    characaters.push(String.fromCharCode(i));
+    chars.push(String.fromCharCode(i));
   }
 }
 
 // Add uppercase letters if requested
 if (uppercase) {
   for (var i = 65; i <= 90; i++) {
-    characaters.push(String.fromCharCode(i));
+    chars.push(String.fromCharCode(i));
   }
 }
 
 // Add symbols if requested
 if (symbols) {
-  for (var i = 0; i < symbolcharacters.length; i++) {
-    characaters.push(symbolcharacters.charAt(i));
+  const symbolchars = "!@#$%^&*()_+|}{[]|}{/.,?><";
+  for (let i = 0; i < symbolchars.length; i++) {
+ chars.push(symbolchars.charAt(i));
   }
 }
 
 // Add numbers if requested 
 if (numbers) {
   for (var i = 48; i <= 57; i++ ) {
-    characaters.push(String.fromCharCode(i));
+    chars.push(String.fromCharCode(i));
   }
 }
 
@@ -62,8 +63,8 @@ var password = '';
 
 // Generate the password by selecting random characters from the array
 for (var i = 0; i < length; i++) {
-  const index = Math.floor(Math.random() * characaters.length);
-  password += characaters[index];
+  const index = Math.floor(Math.random() * chars.length);
+  password += chars[index];
 }
 
 // Return the generated password 
