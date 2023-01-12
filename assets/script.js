@@ -36,6 +36,44 @@ if (lowercase) {
   }
 }
 
+// Add uppercase letters if requested
+if (uppercase) {
+  for (var i = 65; i <= 90; i++) {
+    characaters.push(String.fromCharCode(i));
+  }
+}
+
+// Add symbols if requested
+if (symbols) {
+  for (var i = 0; i < symbolcharacters.length; i++) {
+    characaters.push(symbolcharacters.charAt(i));
+  }
+}
+
+// Add numbers if requested 
+if (numbers) {
+  for (var i = 48; i <= 57; i++ ) {
+    characaters.push(String.fromCharCode(i));
+  }
+}
+
+// Initialize the password as an empty string
+var password = '';
+
+// Generate the password by selecting random characters from the array
+for (var i = 0; i < length; i++) {
+  const index = Math.floor(Math.random() * characaters.length);
+  password += characaters[index];
+}
+
+// Return the generated password 
+return password;
+
+
+
+}
+
+
 
   // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
