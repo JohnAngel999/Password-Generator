@@ -28,5 +28,9 @@ SO THAT I can create a strong password that provides greater security
 
 ### Website Screenshot
 
-<img src="../assets/images/website.jpg"
+<img src="./assets/images/Website.jpg"
 alt="screenshot of website" /> 
+
+### Website Link
+
+[Password Generator](https://johnangel999.github.io/Password-Generator/)
