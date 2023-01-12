@@ -10,8 +10,34 @@ function generatePassword() {
     length =window.prompt('Please enter the length of the password(Must be between 8 and 128 characters):');
   }
 
+  //user's desired character types
+  var lowercase = window.confirm('Include lowercase letters in the password?');
+  var uppercase = window.confirm('Include uppercase letters in the password?');
+  var symbols = window.confirm('Include symbols in the password?');
+  var numbers = window.confirm('Include numbers in the password?');
 
-// Get references to the #generate element
+  //Validate that one character type is selected
+  while (!lowercase && !uppercase && !symbols && !numbers) {
+    alert('You must select at least one character type for the password. Please try again.');
+    lowercase = window.confirm('Include lowercase letters in password?');
+    uppercase = window.confirm('Include uppercase letters in the password?');
+    symbols = window.confirm('Include symbols in the password?');
+    numbers = window.confirm('Include numbers in the password?');
+
+  }
+
+  //Array of characaters to include in the password
+  const characaters = [];
+ 
+// Add lowercase letters
+if (lowercase) {
+  for (var i = 97; i <= 122; i++){
+    characaters.push(String.fromCharCode(i));
+  }
+}
+
+
+  // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
